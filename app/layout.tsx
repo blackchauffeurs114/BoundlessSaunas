@@ -19,6 +19,10 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   title: "Boundless Saunas | Discover Your Perfect Sauna Today",
   description: "Bespoke handcrafted saunas engineered for wellness, longevity, and modern living. Garden retreats, commercial mobile builds, and custom architecture.",
+  icons: {
+    icon: "/assets/logo.png",
+    apple: "/assets/logo.png",
+  },
 };
 
 export default function RootLayout({

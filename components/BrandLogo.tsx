@@ -1,24 +1,47 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface BrandLogoProps {
-  variant?: "stacked" | "inline";
+  variant?: "badge" | "inline" | "stacked";
   theme?: "light" | "dark";
   className?: string;
+  size?: "sm" | "md" | "lg";
 }
 
 export default function BrandLogo({
-  variant = "stacked",
+  variant = "badge",
   theme = "light",
   className = "",
+  size = "md",
 }: BrandLogoProps) {
-  const isLightText = theme === "light";
+  const isLightText = theme === "light"; // light text for dark background
+
+  // Size dimensions
+  const dims = {
+    sm: { w: 44, h: 44, box: "h-11 w-11" },
+    md: { w: 60, h: 60, box: "h-14 w-14 sm:h-16 sm:w-16" },
+    lg: { w: 84, h: 84, box: "h-20 w-20 sm:h-24 sm:w-24" },
+  }[size];
+
+  // For dark background, use logo-white.png (or logo.png with brightness-0 invert)
+  const logoSrc = isLightText ? "/assets/logo-white.png" : "/assets/logo.png";
 
   if (variant === "inline") {
     return (
-      <Link href="/" className={`inline-flex items-center gap-2 group select-none ${className}`}>
+      <Link href="/" className={`inline-flex items-center gap-3.5 group select-none ${className}`}>
+        <div className={`relative ${dims.box} shrink-0 transition-transform duration-300 group-hover:scale-105`}>
+          <Image
+            src={logoSrc}
+            alt="Boundless Saunas"
+            width={dims.w}
+            height={dims.h}
+            className={`object-contain ${isLightText ? "brightness-0 invert" : ""}`}
+            priority
+          />
+        </div>
         <div className="flex flex-col">
           <span
-            className={`font-serif text-xl sm:text-2xl font-bold tracking-[0.14em] uppercase leading-tight ${
+            className={`font-serif text-lg sm:text-xl font-bold tracking-[0.15em] uppercase leading-tight ${
               isLightText ? "text-white group-hover:text-white/90" : "text-[#1b1713]"
             } transition-colors`}
           >
@@ -36,39 +59,22 @@ export default function BrandLogo({
     );
   }
 
+  // Default: Circular Badge Emblem Logo
   return (
     <Link
       href="/"
       className={`inline-flex flex-col items-center justify-center text-center select-none py-1 group ${className}`}
     >
-      <span
-        className={`text-[8px] sm:text-[9px] tracking-[0.32em] uppercase font-mono font-normal transition-colors ${
-          isLightText ? "text-white/60 group-hover:text-white/80" : "text-[#786e5a]"
-        }`}
-      >
-        — EST • 2024 —
-      </span>
-      <span
-        className={`font-serif text-lg sm:text-[1.4rem] font-medium tracking-[0.18em] uppercase leading-none mt-1 transition-colors ${
-          isLightText ? "text-white group-hover:text-white/90" : "text-[#1b1713]"
-        }`}
-      >
-        BOUNDLESS
-      </span>
-      <span
-        className={`font-serif text-[11px] sm:text-[13px] tracking-[0.32em] uppercase leading-none mt-0.5 transition-colors ${
-          isLightText ? "text-white/90 group-hover:text-white" : "text-[#2e261f]"
-        }`}
-      >
-        SAUNAS
-      </span>
-      <span
-        className={`text-[7px] sm:text-[8px] tracking-[0.28em] uppercase font-mono transition-colors mt-0.5 ${
-          isLightText ? "text-white/50 group-hover:text-white/70" : "text-[#786e5a]/80"
-        }`}
-      >
-        — BESPOKE CRAFT —
-      </span>
+      <div className={`relative ${dims.box} transition-transform duration-300 group-hover:scale-105 drop-shadow-md`}>
+        <Image
+          src={logoSrc}
+          alt="Boundless Saunas Emblem Logo"
+          width={dims.w}
+          height={dims.h}
+          className={`object-contain w-full h-full ${isLightText ? "brightness-0 invert" : ""}`}
+          priority
+        />
+      </div>
     </Link>
   );
 }

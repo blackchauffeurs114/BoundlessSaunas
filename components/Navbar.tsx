@@ -71,7 +71,7 @@ export default function Navbar() {
 
             {/* Center Logo */}
             <div className="flex-1 lg:flex-initial flex justify-start lg:justify-center">
-              <BrandLogo variant="stacked" theme="light" />
+              <BrandLogo variant="badge" theme="light" size="md" />
             </div>
 
             {/* Right Action Button (Desktop) */}
@@ -127,7 +127,7 @@ export default function Navbar() {
               <span>Start Your Build</span>
             </Link>
             <p className="text-xs text-white/40">
-              Porthcothan, PL28 8LN, Cornwall · +44 7498 633823
+              Boundless Saunas UK · hello@boundlesssaunas.co.uk · +44 7498 633823
             </p>
           </div>
         </div>
