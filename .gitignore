@@ -36,3 +36,5 @@ next-env.d.ts
 # ignore any legacy html dumps
 *.html
 original-site/
+
+.vercel

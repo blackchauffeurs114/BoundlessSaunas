@@ -7,7 +7,7 @@ export default function HomePage() {
   return (
     <div className="bg-[#f7f5f0] text-[#1b1713]">
       {/* 1. HERO SECTION (100% MATCH WITH SCREENSHOT: LEFT-ALIGNED CONTENT, SAUNA VISIBLE ON RIGHT) */}
-      <section className="relative min-h-screen flex items-center pt-24 pb-16 px-6 sm:px-10 lg:px-14 overflow-hidden">
+      <section className="relative min-h-[100dvh] flex items-center pt-28 sm:pt-24 pb-14 sm:pb-16 px-5 sm:px-10 lg:px-14 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -15,7 +15,7 @@ export default function HomePage() {
             alt="Boundless Bespoke Handcrafted Sauna in Cornwall"
             fill
             priority
-            className="object-cover object-center"
+            className="object-cover object-[52%_center] sm:object-center"
           />
           {/* Subtle overlay to enhance contrast on the left side text while preserving the sauna glow on the right */}
           <div className="absolute inset-0 bg-black/15"></div>
@@ -24,32 +24,35 @@ export default function HomePage() {
 
         {/* Content: STRICTLY LEFT-ALIGNED as shown in the screenshot */}
         <div className="relative z-10 max-w-[1500px] w-full mx-auto">
-          <div className="max-w-4xl lg:max-w-5xl text-left space-y-6 sm:space-y-7 mt-8 sm:mt-12">
+          <div className="max-w-4xl lg:max-w-5xl text-left space-y-4 sm:space-y-7 mt-4 sm:mt-12">
             <div className="inline-block">
               <span className="section-tag-pill">
                 CRAFTED IN CORNWALL
               </span>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.5rem] font-normal tracking-[-0.015em] text-white leading-[1.05] drop-shadow-md">
-              <span className="block whitespace-nowrap">Heat. Deep Relaxation.</span>
-              <span className="block mt-1 sm:mt-2">Bespoke saunas.</span>
+            <h1 className="font-serif text-[2.85rem] xs:text-[3.1rem] sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.5rem] font-normal tracking-tight text-white leading-[1.04] sm:leading-[1.05] drop-shadow-md">
+              <span className="block sm:inline">Heat. Deep </span>
+              <span className="block sm:inline">Relaxation.</span>
+              <br className="hidden sm:inline" />
+              <span className="block sm:inline sm:mt-2">Bespoke </span>
+              <span className="block sm:inline">saunas.</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-white/90 font-sans font-light leading-relaxed max-w-2xl">
+            <p className="text-[15px] sm:text-lg text-white/90 font-sans font-light leading-[1.5] sm:leading-relaxed max-w-[340px] sm:max-w-2xl">
               Designed for slower living, Boundless handcrafted saunas are built from scratch on the Cornish coast. Every build fits your space and your lifestyle. Every project is refined and built to last.
             </p>
 
-            <div className="pt-2 sm:pt-4 flex flex-wrap items-center gap-4">
+            <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 max-w-[340px] sm:max-w-none">
               <Link
                 href="/saunas"
-                className="inline-flex items-center justify-center px-7 py-3 rounded-full text-sm font-medium bg-white text-black hover:bg-neutral-200 transition-all duration-300 shadow-xl"
+                className="inline-flex items-center justify-center px-7 py-3 rounded-full text-sm font-medium bg-white text-black hover:bg-neutral-200 transition-all duration-300 shadow-xl text-center"
               >
                 <span>Explore our Saunas</span>
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-7 py-3 rounded-full text-sm font-medium border border-white/60 text-white hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-sm"
+                className="inline-flex items-center justify-center px-7 py-3 rounded-full text-sm font-medium border border-white/60 text-white hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-sm text-center"
               >
                 <span>Start Your Build</span>
               </Link>

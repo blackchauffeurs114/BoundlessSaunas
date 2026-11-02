@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { X } from "lucide-react";
 import BrandLogo from "@/components/BrandLogo";
 
 const navLinks = [
@@ -84,15 +85,22 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Mobile Menu Toggle Button */}
+            {/* Mobile Menu Toggle Button (Minimalist 2-line style matching Squarespace screenshot) */}
             <div className="flex items-center lg:hidden">
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="text-white p-2 focus:outline-none"
+                className="text-white p-2 focus:outline-none flex flex-col justify-center items-end gap-1.5 w-10 h-10"
                 aria-label="Toggle navigation menu"
               >
-                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                {mobileMenuOpen ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <div className="flex flex-col justify-center gap-1.5 w-7">
+                    <span className="w-7 h-[1.5px] bg-white rounded-full"></span>
+                    <span className="w-7 h-[1.5px] bg-white rounded-full"></span>
+                  </div>
+                )}
               </button>
             </div>
           </div>
@@ -101,7 +109,19 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-[#110e0c]/98 backdrop-blur-xl lg:hidden flex flex-col justify-between pt-28 pb-12 px-6">
+        <div className="fixed inset-0 z-40 bg-[#110e0c]/98 backdrop-blur-xl lg:hidden flex flex-col justify-between pt-24 pb-12 px-6">
+          <div className="flex justify-center pt-2 pb-4">
+            <div className="relative h-14 w-14">
+              <Image
+                src="/assets/logo-white.png"
+                alt="Boundless Saunas Emblem"
+                width={56}
+                height={56}
+                className="object-contain w-full h-full"
+              />
+            </div>
+          </div>
+
           <nav className="flex flex-col space-y-6 text-center">
             {navLinks.map((item) => {
               const isActive = pathname === item.href;

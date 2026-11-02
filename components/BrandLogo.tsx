@@ -59,23 +59,41 @@ export default function BrandLogo({
     );
   }
 
-  // Default: Center Circular Badge Emblem
+  // Default: Center Typographic Luxury Brand Badge matching Squarespace
   return (
     <Link
       href="/"
-      className={`inline-flex flex-col items-center justify-center text-center select-none py-1 group ${className}`}
+      className={`inline-flex flex-col items-center justify-center text-center select-none py-0.5 group ${className}`}
       aria-label="Boundless Saunas Home"
     >
-      <div className={`relative ${dims.box} transition-transform duration-300 group-hover:scale-105`}>
-        <Image
-          src={logoSrc}
-          alt="Boundless Saunas Emblem Logo"
-          width={dims.w}
-          height={dims.h}
-          className="object-contain w-full h-full drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
-          priority
-        />
-      </div>
+      <span
+        className={`text-[7.5px] sm:text-[8px] tracking-[0.32em] uppercase font-mono transition-colors ${
+          isLightText ? "text-white/70 group-hover:text-white/90" : "text-[#786e5a]"
+        } leading-none`}
+      >
+        — EST • 2024 —
+      </span>
+      <span
+        className={`font-serif text-[1.2rem] sm:text-[1.45rem] font-bold tracking-[0.16em] uppercase leading-tight mt-0.5 transition-colors ${
+          isLightText ? "text-white group-hover:text-white/90" : "text-[#1b1713]"
+        }`}
+      >
+        BOUNDLESS
+      </span>
+      <span
+        className={`font-serif text-[11px] sm:text-[13px] tracking-[0.28em] uppercase leading-none transition-colors ${
+          isLightText ? "text-white/95 group-hover:text-white" : "text-[#2e261f]"
+        }`}
+      >
+        SAUNAS
+      </span>
+      <span
+        className={`text-[6.5px] sm:text-[7.5px] tracking-[0.24em] uppercase font-mono transition-colors mt-0.5 ${
+          isLightText ? "text-white/50 group-hover:text-white/70" : "text-[#786e5a]/80"
+        } leading-none`}
+      >
+        — CORNWALL —
+      </span>
     </Link>
   );
 }
