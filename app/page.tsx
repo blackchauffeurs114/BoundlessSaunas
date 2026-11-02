@@ -18,38 +18,38 @@ export default function HomePage() {
             className="object-cover object-center"
           />
           {/* Subtle overlay to enhance contrast on the left side text while preserving the sauna glow on the right */}
-          <div className="absolute inset-0 bg-black/25"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/35 to-transparent"></div>
+          <div className="absolute inset-0 bg-black/15"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/20 to-transparent"></div>
         </div>
 
         {/* Content: STRICTLY LEFT-ALIGNED as shown in the screenshot */}
         <div className="relative z-10 max-w-[1500px] w-full mx-auto">
-          <div className="max-w-2xl text-left space-y-6 sm:space-y-7 mt-8 sm:mt-12">
+          <div className="max-w-4xl lg:max-w-5xl text-left space-y-6 sm:space-y-7 mt-8 sm:mt-12">
             <div className="inline-block">
               <span className="section-tag-pill">
                 CRAFTED IN CORNWALL
               </span>
             </div>
 
-            <h1 className="font-serif text-5xl sm:text-7xl lg:text-[5.5rem] font-normal tracking-tight text-white leading-[1.06] drop-shadow-lg">
-              Heat. Deep Relaxation.<br />
-              Bespoke saunas.
+            <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.5rem] font-normal tracking-[-0.015em] text-white leading-[1.05] drop-shadow-md">
+              <span className="block whitespace-nowrap">Heat. Deep Relaxation.</span>
+              <span className="block mt-1 sm:mt-2">Bespoke saunas.</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-white/90 font-sans font-light leading-relaxed max-w-xl">
+            <p className="text-base sm:text-lg text-white/90 font-sans font-light leading-relaxed max-w-2xl">
               Designed for slower living, Boundless handcrafted saunas are built from scratch on the Cornish coast. Every build fits your space and your lifestyle. Every project is refined and built to last.
             </p>
 
             <div className="pt-2 sm:pt-4 flex flex-wrap items-center gap-4">
               <Link
                 href="/saunas"
-                className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-medium bg-white text-black hover:bg-neutral-200 transition-all duration-300 shadow-xl"
+                className="inline-flex items-center justify-center px-7 py-3 rounded-full text-sm font-medium bg-white text-black hover:bg-neutral-200 transition-all duration-300 shadow-xl"
               >
                 <span>Explore our Saunas</span>
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-medium border border-white/50 text-white hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-sm"
+                className="inline-flex items-center justify-center px-7 py-3 rounded-full text-sm font-medium border border-white/60 text-white hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-sm"
               >
                 <span>Start Your Build</span>
               </Link>
@@ -70,7 +70,7 @@ export default function HomePage() {
               Our Craft
             </span>
             <h2 className="font-serif text-3xl sm:text-5xl text-[#1b1713] leading-[1.15] font-normal">
-              Every sauna is a one-of-a-kind.
+              Every sauna is a one of a kind.
             </h2>
             <p className="text-[#5c564e] text-base leading-relaxed font-light pt-1">
               Every Boundless Sauna is customized using carefully selected materials that embody the experience you want to have. Intricate detailing and trade-standard sauna build quality come together to create a space that endures.
@@ -158,14 +158,14 @@ export default function HomePage() {
                 The Range
               </span>
               <h2 className="font-serif text-3xl sm:text-5xl text-[#1b1713] font-normal">
-                Three sauna designs. Customized for your experience.
+                Three sauna designs. Customised for your experience.
               </h2>
             </div>
             <Link
               href="/saunas"
               className="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-black/20 text-[#1b1713] hover:bg-black hover:text-white transition-all self-start sm:self-auto shrink-0"
             >
-              <span>View All Saunas</span>
+              <span>Explore all models →</span>
             </Link>
           </div>
 

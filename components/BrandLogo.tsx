@@ -19,9 +19,9 @@ export default function BrandLogo({
 
   // Sizing: clear and readable for circular emblem
   const dims = {
-    sm: { w: 56, h: 56, box: "h-14 w-14" },
-    md: { w: 80, h: 80, box: "h-16 w-16 sm:h-20 sm:w-20" },
-    lg: { w: 104, h: 104, box: "h-24 w-24 sm:h-28 sm:w-28" },
+    sm: { w: 52, h: 52, box: "h-12 w-12 sm:h-14 sm:w-14" },
+    md: { w: 72, h: 72, box: "h-14 w-14 sm:h-[4.25rem] sm:w-[4.25rem]" },
+    lg: { w: 96, h: 96, box: "h-20 w-20 sm:h-24 sm:w-24" },
   }[size];
 
   const logoSrc = isLightText ? "/assets/logo-white.png" : "/assets/logo-dark.png";
@@ -72,7 +72,7 @@ export default function BrandLogo({
           alt="Boundless Saunas Emblem Logo"
           width={dims.w}
           height={dims.h}
-          className="object-contain w-full h-full drop-shadow-md"
+          className="object-contain w-full h-full drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
           priority
         />
       </div>
