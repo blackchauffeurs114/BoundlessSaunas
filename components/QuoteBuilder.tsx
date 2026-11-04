@@ -36,22 +36,22 @@ const STEP_2_OPTIONS: Option[] = [
   {
     id: "indoor",
     title: "Indoors",
-    subtitle: "Basement, garage or dedicated room",
+    subtitle: "Basement, garage or room",
   },
   {
     id: "outdoor",
     title: "Outdoors",
-    subtitle: "Garden, terrace or lakeside",
+    subtitle: "Garden, terrace or coast",
   },
   {
     id: "rooftop",
     title: "Rooftop or balcony",
-    subtitle: "We check floor loads & craneage",
+    subtitle: "Checked loads & craneage",
   },
   {
     id: "facility",
     title: "A facility",
-    subtitle: "Commercial floor with member traffic",
+    subtitle: "Commercial & member traffic",
   },
 ];
 
@@ -66,7 +66,7 @@ const BUDGET_OPTIONS = [
   "£5k–£15k",
   "£15k–£30k",
   "£30k–£70k",
-  "Flagship territory",
+  "Flagship bespoke",
   "Not sure yet",
 ];
 
@@ -133,7 +133,6 @@ export default function QuoteBuilder() {
       setRefCode(code);
       setSubmitted(true);
     } catch {
-      // Fallback in case of network issue
       setRefCode(`BS-${Math.random().toString(36).substring(2, 8).toUpperCase()}`);
       setSubmitted(true);
     } finally {
@@ -155,49 +154,52 @@ export default function QuoteBuilder() {
     setError(null);
   };
 
-  // SUCCESS STATE
+  // SUCCESS STATE (LIGHT WEBSITE THEME)
   if (submitted) {
     return (
       <aside
         data-hero-quote="true"
         aria-label="Quote request received"
-        className="w-full max-w-[540px] bg-[#181511]/90 backdrop-blur-md border border-[#EDE6DA]/15 p-6 sm:p-8 text-[#EDE6DA] shadow-2xl transition-all"
+        className="w-full max-w-[540px] bg-white border border-black/10 rounded-[18px] p-6 sm:p-8 text-[#1b1713] shadow-[0_12px_40px_rgba(27,23,19,0.08)] transition-all"
       >
         <div className="space-y-4">
-          <span className="text-[10px] font-semibold tracking-[0.28em] uppercase text-[#C98F4E] block">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#899362]/10 border border-[#899362]/20 rounded-full text-[10px] font-semibold tracking-[0.2em] uppercase text-[#6e7c52]">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#899362]" />
             Request received · Ref: {refCode}
-          </span>
-          <h3 className="font-serif text-2xl sm:text-3xl text-[#EDE6DA] font-normal leading-tight">
+          </div>
+
+          <h3 className="font-serif text-2xl sm:text-3xl text-[#1b1713] font-normal leading-tight">
             The kettle is on, {name.split(" ")[0] || "friend"}.
           </h3>
-          <p className="text-xs sm:text-[13px] leading-relaxed text-[#EDE6DA]/70 font-light">
+
+          <p className="text-xs sm:text-[13px] leading-relaxed text-[#5c564e] font-light">
             Thank you for sharing your project vision. A Boundless Saunas bespoke consultant will review your specifications and reply with an itemised, delivered-to-your-door figure within 24 hours.
           </p>
 
           {/* Selection recap */}
-          <div className="py-3 px-3.5 bg-black/30 border border-[#EDE6DA]/10 text-xs space-y-1.5 text-[#EDE6DA]/80">
-            <div className="flex justify-between">
-              <span className="text-[#EDE6DA]/50 uppercase tracking-wider text-[10px]">Build:</span>
-              <span className="font-medium text-[#C98F4E]">
+          <div className="py-3.5 px-4 bg-[#f7f5f0] border border-black/8 rounded-[12px] text-xs space-y-2 text-[#1b1713]">
+            <div className="flex justify-between items-center">
+              <span className="text-[#6b6359] uppercase tracking-wider text-[10px]">Build:</span>
+              <span className="font-semibold text-[#1b1713]">
                 {STEP_1_OPTIONS.find((o) => o.id === buildingType)?.title || "Bespoke sauna"}
               </span>
             </div>
             {placement && (
-              <div className="flex justify-between">
-                <span className="text-[#EDE6DA]/50 uppercase tracking-wider text-[10px]">Location:</span>
-                <span>{STEP_2_OPTIONS.find((o) => o.id === placement)?.title}</span>
+              <div className="flex justify-between items-center">
+                <span className="text-[#6b6359] uppercase tracking-wider text-[10px]">Location:</span>
+                <span className="font-medium text-[#1b1713]">{STEP_2_OPTIONS.find((o) => o.id === placement)?.title}</span>
               </div>
             )}
             {timing && (
-              <div className="flex justify-between">
-                <span className="text-[#EDE6DA]/50 uppercase tracking-wider text-[10px]">Timeline:</span>
-                <span>{timing}</span>
+              <div className="flex justify-between items-center">
+                <span className="text-[#6b6359] uppercase tracking-wider text-[10px]">Timeline:</span>
+                <span className="font-medium text-[#1b1713]">{timing}</span>
               </div>
             )}
             {budget && (
-              <div className="flex justify-between">
-                <span className="text-[#EDE6DA]/50 uppercase tracking-wider text-[10px]">Budget tier:</span>
-                <span>{budget}</span>
+              <div className="flex justify-between items-center">
+                <span className="text-[#6b6359] uppercase tracking-wider text-[10px]">Budget tier:</span>
+                <span className="font-medium text-[#1b1713]">{budget}</span>
               </div>
             )}
           </div>
@@ -206,11 +208,11 @@ export default function QuoteBuilder() {
             <button
               type="button"
               onClick={handleReset}
-              className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#C98F4E] hover:underline"
+              className="text-[11px] uppercase tracking-[0.18em] font-semibold text-[#1b1713] hover:underline"
             >
               Start another quote
             </button>
-            <p className="text-[10px] text-[#EDE6DA]/40">
+            <p className="text-[10.5px] text-[#70695f]">
               No cart, no obligation.
             </p>
           </div>
@@ -219,26 +221,29 @@ export default function QuoteBuilder() {
     );
   }
 
+  // ACTIVE CARD (LIGHT WEBSITE THEME: WHITE BG, CHARCOAL & SAGE ACCENTS)
   return (
     <aside
       data-hero-quote="true"
       aria-label="Start your quote"
-      className="w-full max-w-[540px] bg-[#181511]/90 backdrop-blur-md border border-[#EDE6DA]/15 p-5 sm:p-7 text-[#EDE6DA] shadow-2xl transition-all"
+      className="w-full max-w-[540px] bg-white border border-black/10 rounded-[18px] p-6 sm:p-8 text-[#1b1713] shadow-[0_12px_40px_rgba(27,23,19,0.08)] transition-all"
     >
       {/* Header Row: Step counter & Back button */}
-      <div className="flex items-center justify-between gap-3 min-h-[22px] mb-2">
+      <div className="flex items-center justify-between gap-3 min-h-[22px] mb-2.5">
         <span
           data-hero-quote-step="true"
-          className="text-[10px] font-medium tracking-[0.24em] uppercase text-[#EDE6DA]/55"
+          className="text-[10.5px] font-semibold tracking-[0.22em] uppercase text-[#6e7c52] flex items-center gap-1.5"
         >
+          <span className="w-1.5 h-1.5 rounded-full bg-[#899362]" />
           Step 0{step} / 04
         </span>
+
         {step > 1 && (
           <button
             type="button"
             data-hero-quote-back="true"
             onClick={handleBack}
-            className="flex items-center gap-1 text-[10px] font-semibold tracking-[0.2em] uppercase text-[#C98F4E] hover:text-[#e0a867] transition-colors"
+            className="flex items-center gap-1 text-[10.5px] font-semibold tracking-[0.18em] uppercase text-[#1b1713] hover:text-[#6e7c52] transition-colors"
           >
             <ArrowLeft className="w-3 h-3" />
             <span>Back</span>
@@ -252,29 +257,29 @@ export default function QuoteBuilder() {
         aria-valuemin={0}
         aria-valuemax={4}
         aria-valuenow={step}
-        className="h-[1px] bg-[#EDE6DA]/15 mb-4 relative"
+        className="h-[2px] bg-black/8 rounded-full mb-5 relative overflow-hidden"
       >
         <div
-          className="absolute left-0 top-0 bottom-0 bg-[#C98F4E] transition-all duration-500 ease-out"
+          className="absolute left-0 top-0 bottom-0 bg-[#1b1713] rounded-full transition-all duration-500 ease-out"
           style={{ width: `${progressPercent}%` }}
         />
       </div>
 
       {/* Question Headline */}
-      <p
+      <h3
         id="hqc-q"
-        className="font-serif font-normal text-xl sm:text-2xl text-[#EDE6DA] mb-3 leading-snug"
+        className="font-serif font-normal text-2xl sm:text-[28px] text-[#1b1713] mb-4 leading-tight"
       >
         {step === 1 && "What are you building?"}
         {step === 2 && "Where will it live?"}
         {step === 3 && "Timing & Investment"}
         {step === 4 && "Where should we send your quote?"}
-      </p>
+      </h3>
 
       {/* STEP 1: What are you building? */}
       {step === 1 && (
-        <div className="space-y-3.5 mb-3.5">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+        <div className="space-y-4 mb-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             {STEP_1_OPTIONS.map((opt) => {
               const isSelected = buildingType === opt.id;
               return (
@@ -283,20 +288,18 @@ export default function QuoteBuilder() {
                   type="button"
                   data-hero-quote-opt={opt.id}
                   aria-pressed={isSelected}
-                  onClick={() => {
-                    setBuildingType(opt.id);
-                  }}
-                  className={`flex flex-col justify-center gap-0.5 min-h-[50px] text-left p-3 transition-all duration-300 ${
+                  onClick={() => setBuildingType(opt.id)}
+                  className={`flex flex-col justify-center gap-1 min-h-[58px] text-left p-3.5 rounded-[12px] transition-all duration-200 cursor-pointer ${
                     isSelected
-                      ? "bg-[#C98F4E]/15 border border-[#C98F4E]"
-                      : "bg-[#181511] border border-[#EDE6DA]/20 hover:border-[#EDE6DA]/40 hover:bg-[#201c17]"
+                      ? "bg-[#1b1713] border border-[#1b1713] text-white shadow-sm"
+                      : "bg-[#fbfaf8] border border-black/10 text-[#1b1713] hover:border-black/30 hover:bg-[#f3ede3]"
                   }`}
                 >
-                  <span className="text-[13px] font-medium text-[#EDE6DA] leading-tight flex items-center justify-between">
+                  <span className={`text-[13.5px] font-medium leading-tight flex items-center justify-between ${isSelected ? "text-white" : "text-[#1b1713]"}`}>
                     {opt.title}
-                    {isSelected && <Check className="w-3.5 h-3.5 text-[#C98F4E]" />}
+                    {isSelected && <Check className="w-3.5 h-3.5 text-[#c7d67a]" />}
                   </span>
-                  <span className="text-[10.5px] text-[#EDE6DA]/50 leading-tight">
+                  <span className={`text-[11px] leading-tight ${isSelected ? "text-white/75" : "text-[#6b6359]"}`}>
                     {opt.subtitle}
                   </span>
                 </button>
@@ -309,10 +312,10 @@ export default function QuoteBuilder() {
             data-hero-quote-cta="true"
             disabled={!buildingType}
             onClick={handleNext}
-            className={`w-full flex items-center justify-center min-h-[46px] px-6 text-[10.5px] font-semibold tracking-[0.22em] uppercase transition-all duration-300 ${
+            className={`w-full flex items-center justify-center min-h-[46px] px-6 text-xs font-semibold tracking-[0.2em] uppercase rounded-full transition-all duration-300 ${
               buildingType
-                ? "bg-[#C98F4E] border border-[#C98F4E] text-[#17130D] hover:bg-[#d89e5c] cursor-pointer"
-                : "bg-transparent border border-[#EDE6DA]/20 text-[#EDE6DA]/40 pointer-events-none"
+                ? "bg-[#1b1713] border border-[#1b1713] text-white hover:bg-[#332b24] cursor-pointer shadow-md"
+                : "bg-[#efebe4] border border-black/5 text-[#9e968b] pointer-events-none"
             }`}
           >
             <span>Continue →</span>
@@ -322,8 +325,8 @@ export default function QuoteBuilder() {
 
       {/* STEP 2: Where will it live? */}
       {step === 2 && (
-        <div className="space-y-3.5 mb-3.5">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+        <div className="space-y-4 mb-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             {STEP_2_OPTIONS.map((opt) => {
               const isSelected = placement === opt.id;
               return (
@@ -332,20 +335,18 @@ export default function QuoteBuilder() {
                   type="button"
                   data-hero-quote-opt={opt.id}
                   aria-pressed={isSelected}
-                  onClick={() => {
-                    setPlacement(opt.id);
-                  }}
-                  className={`flex flex-col justify-center gap-0.5 min-h-[50px] text-left p-3 transition-all duration-300 ${
+                  onClick={() => setPlacement(opt.id)}
+                  className={`flex flex-col justify-center gap-1 min-h-[58px] text-left p-3.5 rounded-[12px] transition-all duration-200 cursor-pointer ${
                     isSelected
-                      ? "bg-[#C98F4E]/15 border border-[#C98F4E]"
-                      : "bg-[#181511] border border-[#EDE6DA]/20 hover:border-[#EDE6DA]/40 hover:bg-[#201c17]"
+                      ? "bg-[#1b1713] border border-[#1b1713] text-white shadow-sm"
+                      : "bg-[#fbfaf8] border border-black/10 text-[#1b1713] hover:border-black/30 hover:bg-[#f3ede3]"
                   }`}
                 >
-                  <span className="text-[13px] font-medium text-[#EDE6DA] leading-tight flex items-center justify-between">
+                  <span className={`text-[13.5px] font-medium leading-tight flex items-center justify-between ${isSelected ? "text-white" : "text-[#1b1713]"}`}>
                     {opt.title}
-                    {isSelected && <Check className="w-3.5 h-3.5 text-[#C98F4E]" />}
+                    {isSelected && <Check className="w-3.5 h-3.5 text-[#c7d67a]" />}
                   </span>
-                  <span className="text-[10.5px] text-[#EDE6DA]/50 leading-tight">
+                  <span className={`text-[11px] leading-tight ${isSelected ? "text-white/75" : "text-[#6b6359]"}`}>
                     {opt.subtitle}
                   </span>
                 </button>
@@ -358,10 +359,10 @@ export default function QuoteBuilder() {
             data-hero-quote-cta="true"
             disabled={!placement}
             onClick={handleNext}
-            className={`w-full flex items-center justify-center min-h-[46px] px-6 text-[10.5px] font-semibold tracking-[0.22em] uppercase transition-all duration-300 ${
+            className={`w-full flex items-center justify-center min-h-[46px] px-6 text-xs font-semibold tracking-[0.2em] uppercase rounded-full transition-all duration-300 ${
               placement
-                ? "bg-[#C98F4E] border border-[#C98F4E] text-[#17130D] hover:bg-[#d89e5c] cursor-pointer"
-                : "bg-transparent border border-[#EDE6DA]/20 text-[#EDE6DA]/40 pointer-events-none"
+                ? "bg-[#1b1713] border border-[#1b1713] text-white hover:bg-[#332b24] cursor-pointer shadow-md"
+                : "bg-[#efebe4] border border-black/5 text-[#9e968b] pointer-events-none"
             }`}
           >
             <span>Continue →</span>
@@ -371,9 +372,9 @@ export default function QuoteBuilder() {
 
       {/* STEP 3: Timing & Investment */}
       {step === 3 && (
-        <div className="space-y-3.5 mb-3.5">
+        <div className="space-y-4 mb-2">
           <div className="space-y-2">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-[#EDE6DA]/60 block font-medium">
+            <span className="text-[10px] uppercase tracking-[0.2em] text-[#6b6359] block font-semibold">
               Expected Timeline
             </span>
             <div className="grid grid-cols-2 gap-2">
@@ -384,10 +385,10 @@ export default function QuoteBuilder() {
                     key={t}
                     type="button"
                     onClick={() => setTiming(t)}
-                    className={`py-2 px-2.5 text-left text-xs font-medium transition-all ${
+                    className={`py-2.5 px-3 text-left text-xs font-medium rounded-[10px] transition-all cursor-pointer ${
                       isSelected
-                        ? "bg-[#C98F4E]/15 border border-[#C98F4E] text-[#EDE6DA]"
-                        : "bg-[#181511] border border-[#EDE6DA]/20 text-[#EDE6DA]/70 hover:border-[#EDE6DA]/40"
+                        ? "bg-[#1b1713] border border-[#1b1713] text-white shadow-sm"
+                        : "bg-[#fbfaf8] border border-black/10 text-[#5c564e] hover:border-black/30"
                     }`}
                   >
                     {t}
@@ -398,7 +399,7 @@ export default function QuoteBuilder() {
           </div>
 
           <div className="space-y-2 pt-1">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-[#EDE6DA]/60 block font-medium">
+            <span className="text-[10px] uppercase tracking-[0.2em] text-[#6b6359] block font-semibold">
               Investment Tier (Delivered)
             </span>
             <div className="grid grid-cols-3 gap-2">
@@ -409,10 +410,10 @@ export default function QuoteBuilder() {
                     key={b}
                     type="button"
                     onClick={() => setBudget(b)}
-                    className={`py-2 px-2 text-center text-xs font-medium transition-all ${
+                    className={`py-2 px-2 text-center text-xs font-medium rounded-[10px] transition-all cursor-pointer ${
                       isSelected
-                        ? "bg-[#C98F4E]/15 border border-[#C98F4E] text-[#EDE6DA]"
-                        : "bg-[#181511] border border-[#EDE6DA]/20 text-[#EDE6DA]/70 hover:border-[#EDE6DA]/40"
+                        ? "bg-[#1b1713] border border-[#1b1713] text-white shadow-sm"
+                        : "bg-[#fbfaf8] border border-black/10 text-[#5c564e] hover:border-black/30"
                     }`}
                   >
                     {b}
@@ -427,10 +428,10 @@ export default function QuoteBuilder() {
             data-hero-quote-cta="true"
             disabled={!timing && !budget}
             onClick={handleNext}
-            className={`w-full flex items-center justify-center min-h-[46px] px-6 text-[10.5px] font-semibold tracking-[0.22em] uppercase transition-all duration-300 ${
+            className={`w-full flex items-center justify-center min-h-[46px] px-6 text-xs font-semibold tracking-[0.2em] uppercase rounded-full transition-all duration-300 ${
               timing || budget
-                ? "bg-[#C98F4E] border border-[#C98F4E] text-[#17130D] hover:bg-[#d89e5c] cursor-pointer"
-                : "bg-transparent border border-[#EDE6DA]/20 text-[#EDE6DA]/40 pointer-events-none"
+                ? "bg-[#1b1713] border border-[#1b1713] text-white hover:bg-[#332b24] cursor-pointer shadow-md"
+                : "bg-[#efebe4] border border-black/5 text-[#9e968b] pointer-events-none"
             }`}
           >
             <span>Continue to Details →</span>
@@ -440,16 +441,16 @@ export default function QuoteBuilder() {
 
       {/* STEP 4: Contact & Site Details */}
       {step === 4 && (
-        <form onSubmit={handleSubmit} className="space-y-3 mb-3">
+        <form onSubmit={handleSubmit} className="space-y-3.5 mb-2">
           {error && (
-            <div className="p-2.5 bg-red-950/60 border border-red-500/40 text-red-200 text-xs">
+            <div className="p-3 bg-red-50 border border-red-200 text-red-800 text-xs rounded-[8px]">
               {error}
             </div>
           )}
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             <div>
-              <label className="text-[10px] uppercase tracking-[0.18em] text-[#EDE6DA]/60 block mb-1">
+              <label className="text-[10px] uppercase tracking-[0.18em] text-[#5c564e] block mb-1 font-semibold">
                 Your Name *
               </label>
               <input
@@ -458,11 +459,11 @@ export default function QuoteBuilder() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Cam Wickins"
-                className="w-full bg-[#181511] border border-[#EDE6DA]/20 px-3 py-2 text-xs text-[#EDE6DA] focus:border-[#C98F4E] focus:outline-none transition-colors"
+                className="w-full bg-[#fbfaf8] border border-black/15 px-3.5 py-2.5 text-xs text-[#1b1713] rounded-[8px] focus:border-[#1b1713] focus:bg-white focus:outline-none transition-colors"
               />
             </div>
             <div>
-              <label className="text-[10px] uppercase tracking-[0.18em] text-[#EDE6DA]/60 block mb-1">
+              <label className="text-[10px] uppercase tracking-[0.18em] text-[#5c564e] block mb-1 font-semibold">
                 Email Address *
               </label>
               <input
@@ -471,13 +472,13 @@ export default function QuoteBuilder() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@domain.co.uk"
-                className="w-full bg-[#181511] border border-[#EDE6DA]/20 px-3 py-2 text-xs text-[#EDE6DA] focus:border-[#C98F4E] focus:outline-none transition-colors"
+                className="w-full bg-[#fbfaf8] border border-black/15 px-3.5 py-2.5 text-xs text-[#1b1713] rounded-[8px] focus:border-[#1b1713] focus:bg-white focus:outline-none transition-colors"
               />
             </div>
           </div>
 
           <div>
-            <label className="text-[10px] uppercase tracking-[0.18em] text-[#EDE6DA]/60 block mb-1">
+            <label className="text-[10px] uppercase tracking-[0.18em] text-[#5c564e] block mb-1 font-semibold">
               Phone / Delivery Postcode
             </label>
             <input
@@ -485,12 +486,12 @@ export default function QuoteBuilder() {
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               placeholder="e.g. TR1 2LL or 07123 456789"
-              className="w-full bg-[#181511] border border-[#EDE6DA]/20 px-3 py-2 text-xs text-[#EDE6DA] focus:border-[#C98F4E] focus:outline-none transition-colors"
+              className="w-full bg-[#fbfaf8] border border-black/15 px-3.5 py-2.5 text-xs text-[#1b1713] rounded-[8px] focus:border-[#1b1713] focus:bg-white focus:outline-none transition-colors"
             />
           </div>
 
           <div>
-            <label className="text-[10px] uppercase tracking-[0.18em] text-[#EDE6DA]/60 block mb-1">
+            <label className="text-[10px] uppercase tracking-[0.18em] text-[#5c564e] block mb-1 font-semibold">
               Project Notes (Optional)
             </label>
             <textarea
@@ -498,14 +499,14 @@ export default function QuoteBuilder() {
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               placeholder="Any specific heater, glass or site access notes..."
-              className="w-full bg-[#181511] border border-[#EDE6DA]/20 px-3 py-2 text-xs text-[#EDE6DA] focus:border-[#C98F4E] focus:outline-none transition-colors resize-none"
+              className="w-full bg-[#fbfaf8] border border-black/15 px-3.5 py-2.5 text-xs text-[#1b1713] rounded-[8px] focus:border-[#1b1713] focus:bg-white focus:outline-none transition-colors resize-none"
             />
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full flex items-center justify-center min-h-[46px] px-6 text-[10.5px] font-semibold tracking-[0.22em] uppercase bg-[#C98F4E] border border-[#C98F4E] text-[#17130D] hover:bg-[#d89e5c] transition-all cursor-pointer disabled:opacity-50"
+            className="w-full flex items-center justify-center min-h-[46px] px-6 text-xs font-semibold tracking-[0.2em] uppercase bg-[#1b1713] border border-[#1b1713] text-white hover:bg-[#332b24] rounded-full transition-all cursor-pointer shadow-md disabled:opacity-50"
           >
             <span>{loading ? "Preparing your quote..." : "Request Delivered Quote →"}</span>
           </button>
@@ -513,7 +514,7 @@ export default function QuoteBuilder() {
       )}
 
       {/* Footer Reassurance */}
-      <p className="mt-2.5 text-[10.5px] leading-relaxed text-[#EDE6DA]/45">
+      <p className="mt-3 text-[11px] leading-relaxed text-[#70695f] text-center font-light">
         No cart, no pressure — a consultant replies within 24 hours.
       </p>
     </aside>
