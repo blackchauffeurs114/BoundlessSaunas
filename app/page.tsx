@@ -131,8 +131,8 @@ export default function HomePage() {
             <div className="md:col-span-3 flex flex-col gap-3.5">
               <div className="relative h-[130px] sm:h-[180px] rounded-[15px] overflow-hidden bg-neutral-200 border border-black/5 shadow-sm group">
                 <Image
-                  src="/assets/craft/craft-interior-window.jpg"
-                  alt="Interior cedar timber bench detailing and window lighting"
+                  src="/assets/craft/craft-mountain-wall.jpg"
+                  alt="Custom backlit mountain silhouette timber back wall with sauna benches"
                   fill
                   sizes="(max-width: 768px) 50vw, 25vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -140,8 +140,8 @@ export default function HomePage() {
               </div>
               <div className="relative h-[310px] sm:h-[400px] rounded-[15px] overflow-hidden bg-neutral-200 border border-black/5 shadow-sm group">
                 <Image
-                  src="/assets/craft/craft-mountain-wall.jpg"
-                  alt="Custom backlit mountain silhouette timber back wall with sauna benches and fresh towels"
+                  src="/assets/craft/craft-stove.jpg"
+                  alt="Wood-burning Huum sauna stove with stone cage, flue pipe and panoramic glass window"
                   fill
                   sizes="(max-width: 768px) 50vw, 25vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -496,7 +496,7 @@ export default function HomePage() {
                 desc: "Thermo alder benches with hidden LED strips. No splinters, no overheating, no harsh light. Just the warm wood and a quiet glow.",
               },
               {
-                img: "/content/v1/6993920ac427d10258b41fb2/eafb2bdd-f930-41dd-b773-4cc825f87b90/IMG_0858.JPG",
+                img: "/assets/craft/craft-stove.jpg",
                 title: "Huum heaters — WiFi controlled.",
                 desc: "Award-winning Estonian stoves. Heat from your phone, walk into a perfect 90°C. Wood-fired options for the purists.",
               },
