@@ -285,8 +285,6 @@ export default function QuoteBuilder() {
                   aria-pressed={isSelected}
                   onClick={() => {
                     setBuildingType(opt.id);
-                    // Smooth auto-advance to step 2 after brief tactile feedback
-                    setTimeout(() => setStep(2), 220);
                   }}
                   className={`flex flex-col justify-center gap-0.5 min-h-[50px] text-left p-3 transition-all duration-300 ${
                     isSelected
@@ -336,7 +334,6 @@ export default function QuoteBuilder() {
                   aria-pressed={isSelected}
                   onClick={() => {
                     setPlacement(opt.id);
-                    setTimeout(() => setStep(3), 220);
                   }}
                   className={`flex flex-col justify-center gap-0.5 min-h-[50px] text-left p-3 transition-all duration-300 ${
                     isSelected
