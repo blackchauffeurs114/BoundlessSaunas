@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { X } from "lucide-react";
 import BrandLogo from "@/components/BrandLogo";
@@ -111,15 +110,7 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-[#110e0c]/98 backdrop-blur-xl lg:hidden flex flex-col justify-between pt-24 pb-12 px-6">
           <div className="flex justify-center pt-2 pb-4">
-            <div className="relative h-14 w-14">
-              <Image
-                src="/assets/logo-white.png"
-                alt="Boundless Saunas Emblem"
-                width={56}
-                height={56}
-                className="object-contain w-full h-full"
-              />
-            </div>
+            <BrandLogo variant="badge" theme="light" size="sm" />
           </div>
 
           <nav className="flex flex-col space-y-6 text-center">
