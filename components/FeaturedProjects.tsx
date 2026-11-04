@@ -67,16 +67,6 @@ export const FEATURED_MODELS: SaunaModelItem[] = [
     href: "/contact",
   },
   {
-    id: "blaze-14",
-    title: "6x14 Blaze Cold Plunge",
-    dimensions: "6' × 14'",
-    category: "Extended Plunge Suite",
-    location: "Handcrafted in Cornwall",
-    mainImage: "/assets/featured/blaze-14-main.jpg",
-    thumbImage: "/assets/featured/blaze-14-thumb.jpg",
-    href: "/contact",
-  },
-  {
     id: "pinnacle",
     title: "8x20 Pinnacle Sauna",
     dimensions: "8' × 20'",
