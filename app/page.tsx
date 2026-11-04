@@ -82,21 +82,22 @@ export default function HomePage() {
 
           {/* 3-Column Photo Mosaic Grid */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-3.5">
-            {/* Column 1: Left wide side (Col 2-14 = 50% width) */}
+            {/* Column 1: Left wide side (Col 2-14 = 50% width) - Roshni wali (Day) & Andheray wali (Night) */}
             <div className="md:col-span-6 flex flex-col gap-3.5">
               <div className="relative h-[260px] sm:h-[340px] rounded-[15px] overflow-hidden bg-neutral-200 border border-black/5 shadow-sm group">
                 <Image
-                  src="/assets/craft/craft-wide-interior.jpg"
-                  alt="Panoramic wooden sauna interior with view onto lush garden, benches and wood-fired heater"
+                  src="/assets/craft/craft-day-exterior.jpg"
+                  alt="Handcrafted Boundless sauna trailer pod on timber decking in daylight"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  priority
                 />
               </div>
               <div className="relative h-[180px] sm:h-[240px] rounded-[15px] overflow-hidden bg-neutral-200 border border-black/5 shadow-sm group">
                 <Image
-                  src="/assets/craft/craft-led-bench.jpg"
-                  alt="Bespoke cedar wall cladding with recessed warm LED glow and ergonomic cedar bench"
+                  src="/assets/craft/craft-night-exterior.jpg"
+                  alt="Handcrafted Boundless sauna illuminated at dusk in Cornish garden with deck lights"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -104,12 +105,12 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Column 2: Middle column (Col 14-20 = 25% width) */}
+            {/* Column 2: Middle column (Col 14-20 = 25% width) - Scenic garden window & Founder */}
             <div className="md:col-span-3 flex flex-col gap-3.5">
               <div className="relative h-[130px] sm:h-[180px] rounded-[15px] overflow-hidden bg-neutral-200 border border-black/5 shadow-sm group">
                 <Image
                   src="/assets/craft/craft-garden-window.jpg"
-                  alt="Sauna window overlooking peaceful backyard garden"
+                  alt="Sauna panoramic window overlooking peaceful green garden"
                   fill
                   sizes="(max-width: 768px) 50vw, 25vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -122,17 +123,16 @@ export default function HomePage() {
                   fill
                   sizes="(max-width: 768px) 50vw, 25vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  priority
                 />
               </div>
             </div>
 
-            {/* Column 3: Right column (Col 20-26 = 25% width) */}
+            {/* Column 3: Right column (Col 20-26 = 25% width) - LED timber bench & HUUM wood stove */}
             <div className="md:col-span-3 flex flex-col gap-3.5">
               <div className="relative h-[130px] sm:h-[180px] rounded-[15px] overflow-hidden bg-neutral-200 border border-black/5 shadow-sm group">
                 <Image
-                  src="/assets/craft/craft-mountain-wall.jpg"
-                  alt="Custom backlit mountain silhouette timber back wall with sauna benches"
+                  src="/assets/craft/craft-led-bench.jpg"
+                  alt="Bespoke cedar timber wall cladding with recessed warm LED glow and ergonomic bench"
                   fill
                   sizes="(max-width: 768px) 50vw, 25vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
