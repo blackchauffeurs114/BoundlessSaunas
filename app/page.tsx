@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Marquee from "@/components/Marquee";
+import QuoteBuilder from "@/components/QuoteBuilder";
 
 export default function HomePage() {
   return (
@@ -147,6 +148,51 @@ export default function HomePage() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3.1 BESPOKE QUOTE BUILDER SECTION (CLONED FROM PREMIUMSAUNACO WITH EXACT DESIGN & FUNCTIONS) */}
+      <section id="quote" className="py-20 sm:py-28 px-6 sm:px-10 lg:px-14 bg-[#14110e] text-[#EDE6DA] border-t border-black/10 relative overflow-hidden">
+        {/* Subtle radial amber gradient matching Premium Sauna Co. */}
+        <div className="absolute inset-0 bg-[radial-gradient(120%_90%_at_20%_112%,rgba(201,143,78,0.15)_0%,rgba(201,143,78,0)_55%)] pointer-events-none" />
+
+        <div className="max-w-[1500px] mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* Left Column: Context & Guarantees */}
+            <div className="lg:col-span-6 space-y-6">
+              <span className="text-[10.5px] font-semibold tracking-[0.28em] uppercase text-[#C98F4E] block">
+                The only checkout we have
+              </span>
+              <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-[#EDE6DA] font-normal leading-[1.05]">
+                Four questions. <br className="hidden sm:inline" />
+                One honest number.
+              </h2>
+              <p className="text-[#EDE6DA]/70 text-base sm:text-lg leading-relaxed max-w-xl font-light">
+                No cart, no configurator theatre. Tell us what you’re building and a Boundless consultant returns a delivered-to-your-door figure within 24 hours — freight, bespoke options and site survey included.
+              </p>
+
+              {/* Guarantees checklist table */}
+              <div className="pt-2 max-w-md space-y-1 text-xs sm:text-[13px] text-[#EDE6DA]/60">
+                <div className="flex justify-between py-2.5 border-t border-[#EDE6DA]/12">
+                  <span>Response</span>
+                  <span className="text-[#EDE6DA] font-medium">Within 24 hours, human</span>
+                </div>
+                <div className="flex justify-between py-2.5 border-t border-[#EDE6DA]/12">
+                  <span>Quote validity</span>
+                  <span className="text-[#EDE6DA] font-medium">30 days, price locked</span>
+                </div>
+                <div className="flex justify-between py-2.5 border-t border-b border-[#EDE6DA]/12">
+                  <span>Obligation</span>
+                  <span className="text-[#EDE6DA] font-medium">None</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Interactive Cloned Quote Builder Card */}
+            <div className="lg:col-span-6 flex justify-center lg:justify-end">
+              <QuoteBuilder />
             </div>
           </div>
         </div>
