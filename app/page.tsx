@@ -11,7 +11,7 @@ export default function HomePage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/content/v1/6993920ac427d10258b41fb2/3086ba99-9692-4649-901a-3a655d396ec7/IMG_0797.JPG"
+            src="/assets/hero-banner.jpg"
             alt="Boundless Bespoke Handcrafted Sauna in Cornwall"
             fill
             priority

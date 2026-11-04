@@ -17,11 +17,11 @@ export default function BrandLogo({
   // theme="light" means light (white) line art on dark background
   const isLightText = theme === "light";
 
-  // Sizing: ~56px mobile / ~68-72px desktop for the circular emblem
+  // Sizing: slightly increased header logo size for optimal visibility
   const dims = {
-    sm: { w: 52, h: 52, box: "h-12 w-12 sm:h-14 sm:w-14" },
-    md: { w: 72, h: 72, box: "h-14 w-14 sm:h-[4.25rem] sm:w-[4.25rem]" },
-    lg: { w: 96, h: 96, box: "h-20 w-20 sm:h-24 sm:w-24" },
+    sm: { w: 58, h: 58, box: "h-14 w-14 sm:h-16 sm:w-16" },
+    md: { w: 84, h: 84, box: "h-16 w-16 sm:h-[4.75rem] sm:w-[4.75rem]" },
+    lg: { w: 104, h: 104, box: "h-20 w-20 sm:h-24 sm:w-24" },
   }[size];
 
   const logoSrc = "/assets/logo.png";
