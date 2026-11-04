@@ -24,9 +24,9 @@ export default function BrandLogo({
     lg: { w: 96, h: 96, box: "h-20 w-20 sm:h-24 sm:w-24" },
   }[size];
 
-  const logoSrc = isLightText ? "/assets/logo-white.png" : "/assets/logo-dark.png";
-  // Subtle drop-shadow only for white line art on dark backgrounds
-  const shadowClass = isLightText ? "drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]" : "";
+  const logoSrc = "/assets/logo.png";
+  // Subtle drop-shadow for the white circular emblem
+  const shadowClass = "drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]";
 
   if (variant === "inline") {
     return (
