@@ -86,8 +86,8 @@ export default function HomePage() {
             <div className="md:col-span-6 flex flex-col gap-3.5">
               <div className="relative h-[260px] sm:h-[340px] rounded-[15px] overflow-hidden bg-neutral-200 border border-black/5 shadow-sm group">
                 <Image
-                  src="/content/v1/6993920ac427d10258b41fb2/1777888534458-D5D4B2YW7R1EHPIS0Q1J/image-asset.jpeg"
-                  alt="Modern wooden sauna with glass doors illuminated from within surrounded by greenery at dusk"
+                  src="/assets/craft/craft-wide-interior.jpg"
+                  alt="Panoramic wooden sauna interior with view onto lush garden, benches and wood-fired heater"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -95,8 +95,8 @@ export default function HomePage() {
               </div>
               <div className="relative h-[180px] sm:h-[240px] rounded-[15px] overflow-hidden bg-neutral-200 border border-black/5 shadow-sm group">
                 <Image
-                  src="/content/v1/6993920ac427d10258b41fb2/1777888534465-T6SFKM03RG37Z3GIKYJZ/IMG_0846.JPG"
-                  alt="Small wooden sauna structure with warm lighting at night"
+                  src="/assets/craft/craft-led-bench.jpg"
+                  alt="Bespoke cedar wall cladding with recessed warm LED glow and ergonomic cedar bench"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -108,8 +108,8 @@ export default function HomePage() {
             <div className="md:col-span-3 flex flex-col gap-3.5">
               <div className="relative h-[130px] sm:h-[180px] rounded-[15px] overflow-hidden bg-neutral-200 border border-black/5 shadow-sm group">
                 <Image
-                  src="/content/v1/6993920ac427d10258b41fb2/1777888534472-NHKQV9GRW9D5UJS7QUQ7/IMG_0815.JPG"
-                  alt="Small outdoor sauna structure with deck and lighting"
+                  src="/assets/craft/craft-garden-window.jpg"
+                  alt="Sauna window overlooking peaceful backyard garden"
                   fill
                   sizes="(max-width: 768px) 50vw, 25vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -131,8 +131,8 @@ export default function HomePage() {
             <div className="md:col-span-3 flex flex-col gap-3.5">
               <div className="relative h-[130px] sm:h-[180px] rounded-[15px] overflow-hidden bg-neutral-200 border border-black/5 shadow-sm group">
                 <Image
-                  src="/content/v1/6993920ac427d10258b41fb2/1777888534486-3QK46NU5CYIONIWL7XNY/IMG_0803.JPG"
-                  alt="Interior of wooden sauna with bench and outdoor window"
+                  src="/assets/craft/craft-interior-window.jpg"
+                  alt="Interior cedar timber bench detailing and window lighting"
                   fill
                   sizes="(max-width: 768px) 50vw, 25vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -140,8 +140,8 @@ export default function HomePage() {
               </div>
               <div className="relative h-[310px] sm:h-[400px] rounded-[15px] overflow-hidden bg-neutral-200 border border-black/5 shadow-sm group">
                 <Image
-                  src="/content/v1/6993920ac427d10258b41fb2/1777888534493-R5X5SRH7PE1QOKPD8TML/IMG_0837.JPG"
-                  alt="Bucket of smooth gray stones next to green window frame"
+                  src="/assets/craft/craft-mountain-wall.jpg"
+                  alt="Custom backlit mountain silhouette timber back wall with sauna benches and fresh towels"
                   fill
                   sizes="(max-width: 768px) 50vw, 25vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
