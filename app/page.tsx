@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Marquee from "@/components/Marquee";
 import QuoteBuilder from "@/components/QuoteBuilder";
+import FeaturedProjects from "@/components/FeaturedProjects";
 
 export default function HomePage() {
   return (
@@ -292,7 +293,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. FULL SAUNA EXPERIENCE / MOORLAND BACKGROUND */}
+      {/* 5. FEATURED PROJECTS (HORIZONTAL TOUCH / SWIPE CAROUSEL CLONED FROM SPAPROF.COM) */}
+      <FeaturedProjects />
+
+      {/* 6. FULL SAUNA EXPERIENCE / MOORLAND BACKGROUND */}
       <section className="relative py-32 sm:py-44 px-6 sm:px-10 lg:px-14 overflow-hidden text-center">
         <div className="absolute inset-0 z-0">
           <Image
