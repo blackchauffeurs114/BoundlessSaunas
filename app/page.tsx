@@ -97,7 +97,7 @@ export default function HomePage() {
               <div className="relative h-[180px] sm:h-[240px] rounded-[15px] overflow-hidden bg-neutral-200 border border-black/5 shadow-sm group">
                 <Image
                   src="/assets/craft/craft-night-exterior.jpg"
-                  alt="Handcrafted Boundless sauna illuminated at dusk in Cornish garden with deck lights"
+                  alt="Handcrafted Boundless mobile sauna trailer illuminated at night with exterior LED light bar and glowing mountain art interior"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
