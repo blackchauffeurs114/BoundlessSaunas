@@ -117,11 +117,12 @@ export default function HomePage() {
               </div>
               <div className="relative h-[310px] sm:h-[400px] rounded-[15px] overflow-hidden bg-neutral-200 border border-black/5 shadow-sm group">
                 <Image
-                  src="/content/v1/6993920ac427d10258b41fb2/1777888534478-RHCT13RACD52VJY37H8C/IMG_0813.JPG"
+                  src="/content/founder-new.jpg"
                   alt="Cam Wickins Founder of Boundless Saunas smiling with arms crossed"
                   fill
                   sizes="(max-width: 768px) 50vw, 25vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  priority
                 />
               </div>
             </div>
