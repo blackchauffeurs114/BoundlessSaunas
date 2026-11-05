@@ -48,7 +48,7 @@ export default function FeaturedProjects() {
         {/* Header row: Section title & tag on left, Controls on right */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-8 sm:mb-12 px-2 sm:px-0">
           <div className="space-y-2.5">
-            <span className="section-tag-light">Bespoke Models</span>
+            <span className="section-tag-light">Models</span>
             <h2 className="font-serif text-3xl sm:text-5xl text-[#1b1713] font-normal leading-tight">
               Featured Builds &amp; Models
             </h2>
