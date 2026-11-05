@@ -43,7 +43,7 @@ export default function FeaturedProjects() {
   };
 
   return (
-    <section className="py-20 sm:py-28 px-4 sm:px-10 lg:px-14 bg-[#f7f5f0] overflow-hidden border-t border-black/5">
+    <section id="featured-projects" className="py-20 sm:py-28 px-4 sm:px-10 lg:px-14 bg-[#f7f5f0] overflow-hidden border-t border-black/5">
       <div className="max-w-[1500px] mx-auto">
         {/* Header row: Section title & tag on left, Controls on right */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-8 sm:mb-12 px-2 sm:px-0">
@@ -86,12 +86,12 @@ export default function FeaturedProjects() {
             </div>
 
             {/* View all projects / Contact CTA */}
-            <Link
-              href="/contact"
+            <a
+              href="#quote-builder"
               className="inline-flex items-center justify-center px-5 sm:px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#1b1713] text-white hover:bg-[#6e7c52] transition-colors shadow-sm"
             >
               <span>Start Your Build</span>
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -106,9 +106,8 @@ export default function FeaturedProjects() {
           }}
         >
           {FEATURED_MODELS.map((model) => (
-            <Link
+            <div
               key={model.id}
-              href={model.href}
               className="group relative flex-none w-[78vw] max-w-[325px] sm:w-[350px] lg:w-[380px] aspect-[4/5] rounded-[16px] overflow-hidden bg-neutral-900 shadow-md snap-start transition-all duration-300 hover:shadow-2xl"
             >
               {/* Main Exterior / Background Image */}
@@ -176,7 +175,7 @@ export default function FeaturedProjects() {
                   </span>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>

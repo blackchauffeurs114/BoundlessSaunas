@@ -54,13 +54,18 @@ export default function Navbar() {
             {/* Left Nav items (Desktop) */}
             <nav className="hidden lg:flex items-center space-x-7 flex-1">
               {navLinks.map((item) => {
-                const isActive = pathname === item.href;
+                const isHome = item.href === "/";
                 return (
                   <Link
                     key={item.name}
-                    href={item.href}
+                    href={isHome ? "/" : "#"}
+                    onClick={(e) => {
+                      if (!isHome) {
+                        e.preventDefault();
+                      }
+                    }}
                     className={`header-nav-link text-[15px] font-normal transition-colors ${
-                      isActive ? "active text-white" : "text-white/80 hover:text-white"
+                      isHome ? "active text-white" : "text-white/80 hover:text-white cursor-default"
                     }`}
                   >
                     {item.name}
@@ -76,12 +81,12 @@ export default function Navbar() {
 
             {/* Right Action Button (Desktop) */}
             <div className="hidden lg:flex items-center justify-end flex-1">
-              <Link
-                href="/contact"
+              <a
+                href="#quote-builder"
                 className="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-sm font-medium bg-white text-black hover:bg-neutral-200 transition-all duration-300 shadow-md"
               >
                 <span>Start Your Build</span>
-              </Link>
+              </a>
             </div>
 
             {/* Mobile Menu Toggle Button (Minimalist 2-line style matching Squarespace screenshot) */}
@@ -115,13 +120,19 @@ export default function Navbar() {
 
           <nav className="flex flex-col space-y-6 text-center">
             {navLinks.map((item) => {
-              const isActive = pathname === item.href;
+              const isHome = item.href === "/";
               return (
                 <Link
                   key={item.name}
-                  href={item.href}
+                  href={isHome ? "/" : "#"}
+                  onClick={(e) => {
+                    if (!isHome) {
+                      e.preventDefault();
+                    }
+                    setMobileMenuOpen(false);
+                  }}
                   className={`text-2xl font-serif tracking-wide ${
-                    isActive ? "text-white font-medium" : "text-white/60 hover:text-white"
+                    isHome ? "text-white font-medium" : "text-white/60 hover:text-white"
                   }`}
                 >
                   {item.name}
@@ -131,12 +142,13 @@ export default function Navbar() {
           </nav>
 
           <div className="pt-8 border-t border-white/10 text-center space-y-4">
-            <Link
-              href="/contact"
+            <a
+              href="#quote-builder"
+              onClick={() => setMobileMenuOpen(false)}
               className="inline-flex items-center justify-center w-full py-4 rounded-full text-sm font-semibold bg-white text-black"
             >
               <span>Start Your Build</span>
-            </Link>
+            </a>
             <p className="text-xs text-white/40">
               Boundless Saunas UK · hello@boundlesssaunas.co.uk · +44 7498 633823
             </p>
