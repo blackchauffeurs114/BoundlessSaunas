@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Marquee from "@/components/Marquee";
 import QuoteBuilder from "@/components/QuoteBuilder";
 import FeaturedProjects from "@/components/FeaturedProjects";
+import VideoReelsSection from "@/components/VideoReelsSection";
 
 export default function HomePage() {
   return (
@@ -161,6 +162,9 @@ export default function HomePage() {
 
       {/* 4. FEATURED PROJECTS (HORIZONTAL TOUCH / SWIPE CAROUSEL CLONED FROM SPAPROF.COM) */}
       <FeaturedProjects />
+
+      {/* 4.5 BOUNDLESS IN MOTION (3 VERTICAL AD REELS WITH BRANDED INTRO) */}
+      <VideoReelsSection />
 
       {/* 5. FULL SAUNA EXPERIENCE / MOORLAND BACKGROUND */}
       <section className="relative py-32 sm:py-44 px-6 sm:px-10 lg:px-14 overflow-hidden text-center">

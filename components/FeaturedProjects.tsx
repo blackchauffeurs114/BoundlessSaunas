@@ -3,80 +3,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
-export interface SaunaModelItem {
-  id: string;
-  title: string;
-  dimensions: string;
-  category: string;
-  location: string;
-  mainImage: string;
-  thumbImage: string;
-  href: string;
-}
-
-export const FEATURED_MODELS: SaunaModelItem[] = [
-  {
-    id: "flare-v2",
-    title: "6x10 Flare Sauna V2",
-    dimensions: "6' × 10'",
-    category: "Bespoke Cabin",
-    location: "Handcrafted in Cornwall",
-    mainImage: "/assets/featured/flare-v2-main.jpg",
-    thumbImage: "/assets/featured/flare-v2-thumb.jpg",
-    href: "/contact",
-  },
-  {
-    id: "blaze-coldplunge",
-    title: "6x12 Blaze Cold Plunge",
-    dimensions: "6' × 12'",
-    category: "Sauna + Cold Plunge",
-    location: "Handcrafted in Cornwall",
-    mainImage: "/assets/featured/blaze-coldplunge-main.jpg",
-    thumbImage: "/assets/featured/blaze-coldplunge-thumb.jpg",
-    href: "/contact",
-  },
-  {
-    id: "blaze-foyer",
-    title: "6x12 Blaze Foyer Sauna",
-    dimensions: "6' × 12'",
-    category: "Foyer Entrance Build",
-    location: "Handcrafted in Cornwall",
-    mainImage: "/assets/featured/blaze-foyer-main.jpg",
-    thumbImage: "/assets/featured/blaze-foyer-thumb.jpg",
-    href: "/contact",
-  },
-  {
-    id: "blaze-shower",
-    title: "6x12 Blaze Shower Sauna",
-    dimensions: "6' × 12'",
-    category: "Integrated Shower Build",
-    location: "Handcrafted in Cornwall",
-    mainImage: "/assets/featured/blaze-shower-main.jpg",
-    thumbImage: "/assets/featured/blaze-shower-thumb.jpg",
-    href: "/contact",
-  },
-  {
-    id: "blaze-superfoyer",
-    title: "6x12 Blaze Super Foyer",
-    dimensions: "6' × 12'",
-    category: "Luxury Foyer Suite",
-    location: "Handcrafted in Cornwall",
-    mainImage: "/assets/featured/blaze-superfoyer-main.jpg",
-    thumbImage: "/assets/featured/blaze-superfoyer-thumb.jpg",
-    href: "/contact",
-  },
-  {
-    id: "pinnacle",
-    title: "8x20 Pinnacle Sauna",
-    dimensions: "8' × 20'",
-    category: "Commercial / Large Format",
-    location: "Handcrafted in Cornwall",
-    mainImage: "/assets/featured/pinnacle-main.jpg",
-    thumbImage: "/assets/featured/pinnacle-thumb.jpg",
-    href: "/contact",
-  },
-];
+import { FEATURED_MODELS, type SaunaModelItem } from "@/lib/modelsData";
+export { FEATURED_MODELS, type SaunaModelItem };
 
 export default function FeaturedProjects() {
   const scrollRef = useRef<HTMLDivElement>(null);
