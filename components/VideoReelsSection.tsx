@@ -20,9 +20,9 @@ const REELS: ReelItem[] = [
   {
     id: "reel-1",
     title: "Deep Winter Snow Session",
-    model: "6x10 Flare Sauna V2",
-    location: "Highland Winter Retreat",
-    duration: "0:24",
+    model: "6x8 Alpine Sauna",
+    location: "Snow Highland Retreat",
+    duration: "1:14",
     videoSrc: "/assets/videos/ad-reel-1.mp4",
     posterSrc: "/assets/featured/flare-v2-main.jpg",
     tag: "Snow & Sub-Zero Spec",
