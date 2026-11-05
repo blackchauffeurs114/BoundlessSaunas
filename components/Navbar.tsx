@@ -150,7 +150,7 @@ export default function Navbar() {
               <span>Start Your Build</span>
             </a>
             <p className="text-xs text-white/40">
-              Boundless Saunas · Washington, USA · hello@boundlesssaunas.co.uk · +44 7498 633823
+              Boundless Saunas · Washington, USA · boundless.saunas@gmail.com
             </p>
           </div>
         </div>

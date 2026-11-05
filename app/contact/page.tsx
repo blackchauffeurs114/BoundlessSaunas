@@ -73,7 +73,7 @@ export default function ContactPage() {
               </a>
 
               <a
-                href="mailto:hello@boundlesssaunas.co.uk"
+                href="mailto:boundless.saunas@gmail.com"
                 className="bg-white border border-[#786e5a]/15 hover:border-[#6f7a48] rounded-2xl p-5 flex items-center gap-4 transition-all shadow-sm group"
               >
                 <div className="w-12 h-12 rounded-xl bg-[#6e7c52]/10 flex items-center justify-center text-[#6e7c52] group-hover:scale-105 transition-transform">
@@ -81,7 +81,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <div className="text-[10px] uppercase tracking-wider text-[#9a9386]">EMAIL</div>
-                  <div className="font-serif text-lg text-[#1b1713] font-medium">hello@boundlesssaunas.co.uk</div>
+                  <div className="font-serif text-lg text-[#1b1713] font-medium">boundless.saunas@gmail.com</div>
                 </div>
               </a>
 

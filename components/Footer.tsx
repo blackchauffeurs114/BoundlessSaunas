@@ -83,13 +83,8 @@ export default function Footer() {
             </h4>
             <div className="space-y-2.5 text-sm text-white/70 font-light">
               <p>
-                <a href="tel:+447498633823" className="hover:text-white transition-colors">
-                  +44 7498 633823
-                </a>
-              </p>
-              <p>
-                <a href="mailto:hello@boundlesssaunas.co.uk" className="hover:text-white transition-colors">
-                  hello@boundlesssaunas.co.uk
+                <a href="mailto:boundless.saunas@gmail.com" className="hover:text-white transition-colors">
+                  boundless.saunas@gmail.com
                 </a>
               </p>
               <p className="text-white/50 text-xs pt-1">
@@ -101,7 +96,7 @@ export default function Footer() {
 
         {/* Bottom Credits */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/40 gap-4">
-          <p>© {new Date().getFullYear()} Boundless Saunas Ltd. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Boundless Saunas. All rights reserved.</p>
           <p>Handcrafted with passion · Washington, USA</p>
         </div>
       </div>
