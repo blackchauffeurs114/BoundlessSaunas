@@ -152,11 +152,6 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-
-          {/* QUOTE BUILDER FORM: PLACED DIRECTLY BELOW THE 6 CRAFT IMAGES */}
-          <div className="pt-10 sm:pt-16 flex flex-col items-center">
-            <QuoteBuilder />
-          </div>
         </div>
       </section>
 
@@ -165,6 +160,24 @@ export default function HomePage() {
 
       {/* 4.5 BOUNDLESS IN MOTION (3 VERTICAL AD REELS WITH BRANDED INTRO) */}
       <VideoReelsSection />
+
+      {/* 4.6 BOOKING & QUOTE BUILDER SECTION (DIRECTLY BELOW VIDEO REELS) */}
+      <section id="quote-builder" className="py-20 sm:py-28 px-6 sm:px-10 lg:px-14 bg-[#f7f5f0] border-b border-black/5">
+        <div className="max-w-[1500px] mx-auto flex flex-col items-center space-y-8">
+          <div className="text-center max-w-xl mx-auto space-y-2">
+            <span className="section-tag-light">
+              Online Estimate
+            </span>
+            <h2 className="font-serif text-3xl sm:text-5xl text-[#1b1713] font-normal leading-tight">
+              Start Your Build
+            </h2>
+            <p className="text-[#5c564e] text-sm sm:text-base font-light">
+              Get an instant bespoke quote tailored to your sauna specifications in 4 simple steps.
+            </p>
+          </div>
+          <QuoteBuilder />
+        </div>
+      </section>
 
       {/* 5. FULL SAUNA EXPERIENCE / MOORLAND BACKGROUND */}
       <section className="relative py-32 sm:py-44 px-6 sm:px-10 lg:px-14 overflow-hidden text-center">
