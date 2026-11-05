@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
-import { Play, Pause, Volume2, VolumeX, Sparkles, MapPin } from "lucide-react";
+import { Play, Volume2, VolumeX, MapPin } from "lucide-react";
 
 interface ReelItem {
   id: string;
@@ -52,10 +52,8 @@ const REELS: ReelItem[] = [
 ];
 
 export default function VideoReelsSection() {
-  const [activeReel, setActiveReel] = useState<string | null>(null);
   const [isMuted, setIsMuted] = useState(true);
   const [playingState, setPlayingState] = useState<{ [id: string]: boolean }>({});
-  const [introState, setIntroState] = useState<{ [id: string]: boolean }>({});
   const videoRefs = useRef<{ [id: string]: HTMLVideoElement | null }>({});
 
   const handleTogglePlay = (reelId: string) => {
@@ -74,7 +72,6 @@ export default function VideoReelsSection() {
       if (video) {
         video.play().then(() => {
           setPlayingState((prev) => ({ ...prev, [reelId]: true }));
-          setActiveReel(reelId);
         }).catch(() => {
           setPlayingState((prev) => ({ ...prev, [reelId]: false }));
         });
@@ -101,64 +98,43 @@ export default function VideoReelsSection() {
   };
 
   return (
-    <section className="py-24 sm:py-32 px-5 sm:px-10 lg:px-14 bg-[#141210] text-white relative overflow-hidden">
+    <section className="py-20 sm:py-28 px-4 sm:px-10 lg:px-14 bg-[#141210] text-white relative overflow-hidden">
       {/* Background ambient lighting */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-900/15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-950/15 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-[1500px] mx-auto space-y-12 sm:space-y-16 relative z-10">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
-          <div className="max-w-2xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-white/90 text-[11px] font-mono tracking-widest uppercase backdrop-blur-md border border-white/15">
-              <Sparkles className="w-3 h-3 text-amber-400" />
-              <span>Boundless in Motion · Field Reels</span>
-            </div>
-            <h2 className="font-serif text-3xl sm:text-5xl font-normal tracking-tight text-white leading-tight">
-              Crafted in Cornwall.<br className="hidden sm:inline" />
-              Proven anywhere.
-            </h2>
-            <p className="text-white/70 text-sm sm:text-base font-light leading-relaxed">
-              Watch real Boundless saunas operating in coastal salt winds, sub-zero snowfields, and off-grid mountain cabins. 100% genuine footage.
-            </p>
-          </div>
-
-          {/* Sound Control Indicator */}
-          <div className="flex items-center gap-3 self-start md:self-end">
-            <button
-              onClick={handleToggleMute}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-xs text-white/90 font-medium transition-all backdrop-blur-sm"
-              title={isMuted ? "Unmute audio" : "Mute audio"}
-            >
-              {isMuted ? (
-                <>
-                  <VolumeX className="w-4 h-4 text-white/70" />
-                  <span>Tap for Sound</span>
-                </>
-              ) : (
-                <>
-                  <Volume2 className="w-4 h-4 text-emerald-400" />
-                  <span>Audio Enabled</span>
-                </>
-              )}
-            </button>
-          </div>
+      <div className="max-w-[1500px] mx-auto relative z-10">
+        
+        {/* Simple Clean Section Header (All bulky text removed) */}
+        <div className="text-center max-w-xl mx-auto space-y-2 mb-10 sm:mb-14">
+          <span className="section-tag-light">
+            In Action
+          </span>
+          <h2 className="font-serif text-3xl sm:text-5xl font-normal text-white">
+            Saunas in Motion
+          </h2>
         </div>
 
-        {/* 3 Vertical Reel Frame Cards (9:16 Ratio) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        {/* Responsive Layout: Mobile Horizontal Touch Slider (Slide), Desktop 3-Column Grid */}
+        <div
+          className="flex md:grid md:grid-cols-3 gap-5 lg:gap-8 overflow-x-auto md:overflow-x-visible pb-6 md:pb-0 px-2 sm:px-0 scroll-smooth snap-x snap-mandatory max-w-6xl mx-auto"
+          style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+            WebkitOverflowScrolling: "touch",
+          }}
+        >
           {REELS.map((reel) => {
             const isPlaying = !!playingState[reel.id];
-            const isShowingIntro = !!introState[reel.id];
 
             return (
               <div
                 key={reel.id}
                 onClick={() => handleTogglePlay(reel.id)}
-                className="group relative cursor-pointer"
+                className="group relative cursor-pointer flex-none w-[80vw] max-w-[325px] md:w-auto md:max-w-none snap-center"
               >
                 {/* Smartphone / Reel Bezel Frame Container */}
-                <div className="relative aspect-[9/16] w-full rounded-[28px] overflow-hidden bg-stone-900 border-2 border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.6)] transition-all duration-500 group-hover:scale-[1.015] group-hover:border-white/35 group-hover:shadow-[0_25px_60px_rgba(0,0,0,0.8)]">
+                <div className="relative aspect-[9/16] w-full rounded-[26px] overflow-hidden bg-stone-900 border-2 border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.6)] transition-all duration-500 group-hover:scale-[1.015] group-hover:border-white/35 group-hover:shadow-[0_25px_60px_rgba(0,0,0,0.8)]">
                   
                   {/* Video Player */}
                   <video
@@ -174,35 +150,17 @@ export default function VideoReelsSection() {
                     onEnded={() => setPlayingState((prev) => ({ ...prev, [reel.id]: false }))}
                   />
 
-                  {/* Fallback Poster Background if video is not loaded/playing */}
-                  {!isPlaying && !isShowingIntro && (
+                  {/* Fallback Poster Background if video is paused */}
+                  {!isPlaying && (
                     <div className="absolute inset-0 z-[1]">
                       <Image
                         src={reel.posterSrc}
                         alt={reel.title}
                         fill
-                        sizes="(max-width: 768px) 100vw, 33vw"
+                        sizes="(max-width: 768px) 80vw, 33vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-black/40" />
-                    </div>
-                  )}
-
-                  {/* Branded Google Flow / Round Logo Intro Overlay */}
-                  {isShowingIntro && (
-                    <div className="absolute inset-0 z-30 bg-white flex flex-col items-center justify-center p-6 transition-all duration-700 animate-fadeIn">
-                      <div className="relative w-28 h-28 rounded-full shadow-2xl p-3 bg-white border border-stone-200 animate-pulse flex items-center justify-center">
-                        <Image
-                          src="/assets/logo.png"
-                          alt="Boundless Saunas Logo"
-                          width={96}
-                          height={96}
-                          className="object-contain"
-                        />
-                      </div>
-                      <span className="mt-4 font-serif text-stone-900 text-sm tracking-wider uppercase font-medium animate-bounce">
-                        Boundless Saunas
-                      </span>
                     </div>
                   )}
 
@@ -213,15 +171,24 @@ export default function VideoReelsSection() {
                       <span>{reel.tag}</span>
                     </div>
 
-                    <div className="px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[10px] font-mono text-white/90">
-                      {reel.duration}
-                    </div>
+                    {/* In-Card Audio Mute/Unmute Toggle */}
+                    <button
+                      onClick={handleToggleMute}
+                      className="p-2 rounded-full bg-black/60 hover:bg-black/80 backdrop-blur-md border border-white/20 text-white/90 transition-all shadow-md"
+                      title={isMuted ? "Unmute Audio" : "Mute Audio"}
+                    >
+                      {isMuted ? (
+                        <VolumeX className="w-3.5 h-3.5 text-white/70" />
+                      ) : (
+                        <Volume2 className="w-3.5 h-3.5 text-emerald-400" />
+                      )}
+                    </button>
                   </div>
 
                   {/* Center Play Button Overlay (when paused) */}
-                  {!isPlaying && !isShowingIntro && (
+                  {!isPlaying && (
                     <div className="absolute inset-0 z-20 flex items-center justify-center">
-                      <div className="w-16 h-16 sm:w-18 sm:h-18 rounded-full bg-white/90 text-stone-950 flex items-center justify-center shadow-2xl backdrop-blur-md transition-all duration-300 group-hover:scale-110 group-hover:bg-white">
+                      <div className="w-16 h-16 rounded-full bg-white/90 text-stone-950 flex items-center justify-center shadow-2xl backdrop-blur-md transition-all duration-300 group-hover:scale-110 group-hover:bg-white">
                         <Play className="w-7 h-7 fill-stone-950 ml-1" />
                       </div>
                     </div>
@@ -243,9 +210,8 @@ export default function VideoReelsSection() {
                         Model: <strong className="text-white font-medium">{reel.model}</strong>
                       </span>
 
-                      {/* Small inline play state indicator */}
                       <span className="text-[10px] font-mono uppercase tracking-widest text-white/60">
-                        {isPlaying ? "Playing" : "Tap to Play"}
+                        {isPlaying ? "Playing" : reel.duration}
                       </span>
                     </div>
                   </div>
@@ -257,6 +223,14 @@ export default function VideoReelsSection() {
             );
           })}
         </div>
+
+        {/* Mobile Swipe Hint Dots */}
+        <div className="flex md:hidden items-center justify-center gap-1.5 pt-4">
+          <span className="w-6 h-1 rounded-full bg-white/70" />
+          <span className="w-1.5 h-1 rounded-full bg-white/30" />
+          <span className="w-1.5 h-1 rounded-full bg-white/30" />
+        </div>
+
       </div>
     </section>
   );
