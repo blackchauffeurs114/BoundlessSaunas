@@ -63,9 +63,9 @@ const TIMING_OPTIONS = [
 ];
 
 const BUDGET_OPTIONS = [
-  "£5k–£15k",
-  "£15k–£30k",
-  "£30k–£70k",
+  "$5k–$15k",
+  "$15k–$30k",
+  "$30k–$70k",
   "Flagship bespoke",
   "Not sure yet",
 ];

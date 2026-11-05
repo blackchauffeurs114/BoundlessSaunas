@@ -130,13 +130,13 @@ export default function ContactForm({ initialModel = "" }: ContactFormProps) {
             onChange={(e) => setFormData({ ...formData, model: e.target.value })}
             className="w-full bg-[#f7f5f0] border border-[#786e5a]/15 rounded-xl px-4 py-3 text-sm text-[#1b1713] focus:outline-none focus:border-[#6e7c52] transition-colors"
           >
-            <option value="The Luna Sauna">The Luna (From £18,000)</option>
-            <option value="The Nest Sauna">The Nest (From £15,000)</option>
-            <option value="Commercial Mobile">Commercial Mobile (From £28,000)</option>
-            <option value="The Cove">The Cove (From £10,000)</option>
-            <option value="The Haven">The Haven (From £16,000)</option>
-            <option value="The Solace">The Solace (From £21,000)</option>
-            <option value="The Sanctuary">The Sanctuary (From £28,000)</option>
+            <option value="The Luna Sauna">The Luna (From $18,000)</option>
+            <option value="The Nest Sauna">The Nest (From $15,000)</option>
+            <option value="Commercial Mobile">Commercial Mobile (From $28,000)</option>
+            <option value="The Cove">The Cove (From $10,000)</option>
+            <option value="The Haven">The Haven (From $16,000)</option>
+            <option value="The Solace">The Solace (From $21,000)</option>
+            <option value="The Sanctuary">The Sanctuary (From $28,000)</option>
             <option value="Fully Custom / Bespoke">Fully Custom Architectural Build</option>
           </select>
         </div>

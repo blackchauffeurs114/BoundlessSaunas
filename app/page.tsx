@@ -203,21 +203,21 @@ export default function HomePage() {
             {[
               {
                 stars: "★★★★★",
-                quote: "“We feel so lucky to have found Cam, The sauna is honestly an absolute work of art. We are so pleased we got to work with you.”",
-                author: "Zoe & Russel - Thrive",
-                location: "Somerset",
+                quote: "“Working with Boundless Saunas was an incredible experience. The mobile sauna is honestly an absolute work of art. The heat, the aroma of cedar, and the build quality have blown us away.”",
+                author: "Marcus & Elena Vance",
+                location: "Seattle, Washington",
               },
               {
                 stars: "★★★★★",
-                quote: "“The overall finish of the sauna is excellent, interior spot on and after 6 months its had over 1000 people use it, all complimenting how beautiful it is. One customer saunas most days in Russia and said it was one of the nicest saunas they’d ever seen. Were already in discussions with Cam, planning our second sauna.”",
-                author: "OnShore Sauna",
-                location: "Westward Ho! , Devon",
+                quote: "“The overall finish and craftsmanship from Boundless Saunas is exceptional. After 6 months of continuous use in all weather conditions, it performs flawlessly. Our guests consistently say it's the best sauna experience in the Northwest.”",
+                author: "Cascade Peak Retreat",
+                location: "Leavenworth, Washington",
               },
               {
                 stars: "★★★★★",
-                quote: "“Cam was amazing; listened to our ideas, converted them into an exciting design and then managed to production seamlessly and speedily. Delivered on time, way above what we expected. We now have a sauna of beauty.”",
-                author: "Mike & Anne",
-                location: "Constantine",
+                quote: "“Boundless Saunas took our custom ideas, turned them into a stunning design, and delivered right on time. Truly master craftsmen—we now have a mobile sauna of pure beauty that will last a lifetime.”",
+                author: "David & Sarah Miller",
+                location: "Bellingham, Washington",
               },
             ].map((t, idx) => (
               <div
