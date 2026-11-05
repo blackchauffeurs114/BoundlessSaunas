@@ -12,7 +12,7 @@ export default function Footer() {
             <BrandLogo variant="badge" theme="light" size="xl" className="justify-start" />
 
             <p className="text-white/60 text-sm leading-relaxed max-w-sm font-light">
-              Bespoke luxury saunas, hand-crafted to perfection. Garden retreats, commercial mobile builds, and trade construction — each engineered to endure.
+              Luxury craftsman mobile sauna builder. Born out of a deep appreciation for health and wellness, we bring you the ultimate sauna experience, anywhere!
             </p>
 
             <div className="flex items-center space-x-3 pt-2">

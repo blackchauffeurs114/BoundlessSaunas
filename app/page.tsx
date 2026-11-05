@@ -40,7 +40,7 @@ export default function HomePage() {
             </h1>
 
             <p className="text-[15px] sm:text-lg text-white/90 font-sans font-light leading-[1.5] sm:leading-relaxed max-w-[340px] sm:max-w-2xl">
-              Designed for slower living, Boundless handcrafted saunas are built from scratch in Washington, USA. Every build fits your space and your lifestyle. Every project is refined and built to last.
+              Luxury craftsman mobile sauna builder. Born out of a deep appreciation for health and wellness, we bring you the ultimate sauna experience, anywhere!
             </p>
 
             <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 max-w-[340px] sm:max-w-none">
