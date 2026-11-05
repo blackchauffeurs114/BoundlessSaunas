@@ -5,7 +5,7 @@ interface BrandLogoProps {
   variant?: "badge" | "inline";
   theme?: "light" | "dark";
   className?: string;
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "xl";
 }
 
 export default function BrandLogo({
@@ -22,6 +22,7 @@ export default function BrandLogo({
     sm: { w: 58, h: 58, box: "h-14 w-14 sm:h-16 sm:w-16" },
     md: { w: 84, h: 84, box: "h-16 w-16 sm:h-[4.75rem] sm:w-[4.75rem]" },
     lg: { w: 104, h: 104, box: "h-20 w-20 sm:h-24 sm:w-24" },
+    xl: { w: 124, h: 124, box: "h-24 w-24 sm:h-28 sm:w-28" },
   }[size];
 
   const logoSrc = "/assets/logo.png";
@@ -65,7 +66,7 @@ export default function BrandLogo({
   return (
     <Link
       href="/"
-      className={`inline-flex items-center justify-center select-none group ${className}`}
+      className={`inline-flex items-center select-none group ${className}`}
       aria-label="Boundless Saunas Home"
     >
       <div className={`relative ${dims.box} transition-transform duration-300 group-hover:scale-105`}>

@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-14 border-b border-white/10">
           {/* Brand Col */}
           <div className="lg:col-span-3 space-y-6">
-            <BrandLogo variant="inline" theme="light" />
+            <BrandLogo variant="badge" theme="light" size="xl" className="justify-start" />
 
             <p className="text-white/60 text-sm leading-relaxed max-w-sm font-light">
               Bespoke luxury saunas, hand-crafted to perfection. Garden retreats, commercial mobile builds, and trade construction — each engineered to endure.
