@@ -111,7 +111,7 @@ export default function PreservedHomepageSections() {
 
         <div className="relative z-10 max-w-3xl mx-auto space-y-6 text-white">
           <span className="section-tag-pill">
-            Made in Cornwall · Made for Anywhere
+            Made in Washington, USA · Made for Anywhere
           </span>
           <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl text-white font-normal leading-tight">
             The full sauna experience. Built to move.
@@ -159,7 +159,7 @@ export default function PreservedHomepageSections() {
               {
                 num: "03",
                 icon: "/content/v1/6993920ac427d10258b41fb2/003dd254-0e0b-487e-b69d-5912faa4f689/noun-layer-8287509-5C6B3D.png",
-                title: "Hand-built in Cornwall",
+                title: "Hand-built in Washington, USA",
                 desc: "Every Boundless sauna is designed and handcrafted in Porthcothan. Our construction methods are proven, and our attention to detail, meticulous.",
               },
               {

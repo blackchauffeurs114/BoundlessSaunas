@@ -93,7 +93,7 @@ export default function Footer() {
                 </a>
               </p>
               <p className="text-white/50 text-xs pt-1">
-                Boundless Craft Workshop, UK
+                Boundless Craft Workshop, Washington, USA
               </p>
             </div>
           </div>
@@ -102,7 +102,7 @@ export default function Footer() {
         {/* Bottom Credits */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/40 gap-4">
           <p>© {new Date().getFullYear()} Boundless Saunas Ltd. All rights reserved.</p>
-          <p>Handcrafted with passion · UK</p>
+          <p>Handcrafted with passion · Washington, USA</p>
         </div>
       </div>
     </footer>

@@ -13,7 +13,7 @@ export default function HomePage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/assets/hero-banner.jpg"
-            alt="Boundless Bespoke Handcrafted Sauna in Cornwall"
+            alt="Boundless Bespoke Handcrafted Sauna in Washington, USA"
             fill
             priority
             className="object-cover object-[52%_center] sm:object-center"
@@ -27,7 +27,7 @@ export default function HomePage() {
           <div className="max-w-4xl lg:max-w-5xl text-left space-y-4 sm:space-y-7 mt-4 sm:mt-12">
             <div className="inline-block">
               <span className="section-tag-pill">
-                CRAFTED IN CORNWALL
+                CRAFTED IN WASHINGTON, USA
               </span>
             </div>
 
@@ -40,7 +40,7 @@ export default function HomePage() {
             </h1>
 
             <p className="text-[15px] sm:text-lg text-white/90 font-sans font-light leading-[1.5] sm:leading-relaxed max-w-[340px] sm:max-w-2xl">
-              Designed for slower living, Boundless handcrafted saunas are built from scratch on the Cornish coast. Every build fits your space and your lifestyle. Every project is refined and built to last.
+              Designed for slower living, Boundless handcrafted saunas are built from scratch in Washington, USA. Every build fits your space and your lifestyle. Every project is refined and built to last.
             </p>
 
             <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 max-w-[340px] sm:max-w-none">

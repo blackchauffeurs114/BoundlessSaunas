@@ -471,7 +471,7 @@ export default function QuoteBuilder() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@domain.co.uk"
+                placeholder="you@domain.com"
                 className="w-full bg-[#fbfaf8] border border-black/15 px-3.5 py-2.5 text-xs text-[#1b1713] rounded-[8px] focus:border-[#1b1713] focus:bg-white focus:outline-none transition-colors"
               />
             </div>

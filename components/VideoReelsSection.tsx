@@ -43,7 +43,7 @@ const REELS: ReelItem[] = [
     id: "reel-3",
     title: "The Blaze · Coastal Trail Session",
     model: "6x12 Blaze Sauna (6' × 12')",
-    location: "Cornwall Coastal Trail",
+    location: "Washington Coastal Trail",
     duration: "0:52",
     videoSrc: "/assets/videos/ad-reel-3.mp4",
     posterSrc: "/assets/videos/ad-reel-3-poster.jpg",
