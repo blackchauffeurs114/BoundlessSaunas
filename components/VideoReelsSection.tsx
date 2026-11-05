@@ -22,7 +22,7 @@ const REELS: ReelItem[] = [
     title: "Deep Winter Snow Session",
     model: "6x8 Alpine Sauna",
     location: "Snow Highland Retreat",
-    duration: "1:14",
+    duration: "1:13",
     videoSrc: "/assets/videos/ad-reel-1.mp4",
     posterSrc: "/assets/featured/flare-v2-main.jpg",
     tag: "Snow & Sub-Zero Spec",
@@ -70,20 +70,14 @@ export default function VideoReelsSection() {
         }
       });
 
-      // Show branded logo intro for 1.2s before video start if not shown yet
-      setIntroState((prev) => ({ ...prev, [reelId]: true }));
-      setTimeout(() => {
-        setIntroState((prev) => ({ ...prev, [reelId]: false }));
-        if (video) {
-          video.play().then(() => {
-            setPlayingState((prev) => ({ ...prev, [reelId]: true }));
-            setActiveReel(reelId);
-          }).catch(() => {
-            // If video file is not yet available, keep poster visible
-            setPlayingState((prev) => ({ ...prev, [reelId]: false }));
-          });
-        }
-      }, 900);
+      if (video) {
+        video.play().then(() => {
+          setPlayingState((prev) => ({ ...prev, [reelId]: true }));
+          setActiveReel(reelId);
+        }).catch(() => {
+          setPlayingState((prev) => ({ ...prev, [reelId]: false }));
+        });
+      }
     } else {
       if (video) {
         video.pause();
