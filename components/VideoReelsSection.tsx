@@ -30,13 +30,13 @@ const REELS: ReelItem[] = [
   },
   {
     id: "reel-2",
-    title: "Sunset Off-Grid Coastal Run",
-    model: "6x12 Blaze Foyer Sauna",
-    location: "Porthcothan Coastline",
-    duration: "0:30",
+    title: "Flagship Luxury Mobile Session",
+    model: "7x14 Commercial Suite",
+    location: "Coastal Forest Retreat",
+    duration: "1:03",
     videoSrc: "/assets/videos/ad-reel-2.mp4",
     posterSrc: "/assets/featured/blaze-foyer-main.jpg",
-    tag: "Dual-Chamber Suite",
+    tag: "Luxury 7x14 Spec",
   },
   {
     id: "reel-3",
