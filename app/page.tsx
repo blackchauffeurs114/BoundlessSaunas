@@ -35,7 +35,7 @@ export default function HomePage() {
               <span className="block sm:inline">Heat. Deep </span>
               <span className="block sm:inline">Relaxation.</span>
               <br className="hidden sm:inline" />
-              <span className="block sm:inline sm:mt-2">Bespoke </span>
+              <span className="block sm:inline sm:mt-2">Mobile </span>
               <span className="block sm:inline">saunas.</span>
             </h1>
 
